@@ -1,0 +1,19 @@
+syntax = "proto3";
+package  calculator;
+import "calculator/sum.proto";
+import "calculator/avg.proto";
+import "calculator/primes.proto";
+import "calculator/max.proto";
+import "calculator/sqrt.proto";
+
+option java_package = "com.proto.calculator";
+option  java_multiple_files = true;
+
+service CalculatorService{
+  rpc sum(SumRequest) returns (SumResponse);
+  rpc Primes(PrimeRequest) returns (stream PrimeResponse);
+  rpc avg(stream AvgRequest) returns (AvgResponse) ;
+  rpc max(stream MaxRequest) returns (stream MaxResponse);
+  rpc sqrt(SqrtRequest) returns (SqrtResponse);
+
+}

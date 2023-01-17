@@ -1,0 +1,5 @@
+rootProject.name = 'grpc-full-course'
+include 'grpc-client'
+include 'grpc-server'
+include 'common-service'
+
